@@ -1,8 +1,10 @@
 package main;
+
+import main.DigitalVideoDisc;
  
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
-	private DigitalVideoDisc itemsOrdered[] =
+	private DigitalVideoDisc itemOrdered[] =
 			new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 	public int qtyOrdered;
 	
@@ -19,6 +21,17 @@ public class Cart {
 			this.qtyOrdered++;
 		}
 	}
+	/*public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc dvd : dvdList) {
+            addDigitalVideoDisc(dvd);
+        }
+    }*/
+	
+	public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+        for (DigitalVideoDisc dvd : dvds) {
+            addDigitalVideoDisc(dvd);  // Use the existing single-DVD method
+        }
+    }
 	
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		int index = -1;
