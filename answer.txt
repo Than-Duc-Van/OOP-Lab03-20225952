@@ -1,0 +1,41 @@
+Nếu bạn tạo một phương thức xây dựng để xây dựng DVD theo tiêu đề, sau đó tạo một phương thức xây dựng để xây dựng DVD theo danh mục, Java có cho phép bạn làm điều này không?
+
+Có, Java cho phép điều này, nhưng chúng ta cần tạo một số khác biệt giữa các phương thức đó để Java có thể biết phương thức nào nên được sử dụng. Đây là mã ví dụ:
+
+```java
+public class DVD {
+    private String title;
+    private String category;
+
+    // Constructor to build a DVD by title
+    public DVD(String title) {
+        this.title = title;
+        this.category = "Unknown"; // Default category if not provided
+    }
+
+    // Constructor to build a DVD by category
+    public DVD(String category, boolean isCategory) {
+        this.category = category;
+        this.title = "Untitled"; // Default title if not provided
+    }
+
+    // Method to display DVD information
+    public void displayInfo() {
+        System.out.println("Title: " + title);
+        System.out.println("Category: " + category);
+    }
+
+    // Main method to test the constructors
+    public static void main(String[] args) {
+        DVD dvdByTitle = new DVD("Inception");
+        DVD dvdByCategory = new DVD("Sci-Fi", true);
+
+        System.out.println("DVD by Title:");
+        dvdByTitle.displayInfo();
+
+        System.out.println("\nDVD by Category:");
+        dvdByCategory.displayInfo();
+    }
+}
+```
+Bạn có để ý thấy tham số boolean `isCategory` của phương thức xây dựng với trường `category` không? Nó là để làm cho phương thức đó khác với phương thức có trường `title`. Vì cả `title` và `category` đều có giá trị `String`, chỉ sử dụng các trường đó làm tham số cho hai phương thức xây dựng sẽ khiến Java bối rối, không biết nên sử dụng phương thức nào. Bạn có thể thay đổi tên và kiểu của tham số `isCategory` đó thành bất kỳ tên nào bạn muốn, miễn là chúng cho phép mã chạy đúng cách.
