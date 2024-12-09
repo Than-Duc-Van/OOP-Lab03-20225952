@@ -4,71 +4,83 @@ public class DigitalVideoDisc {
 	private String title;
 	private String category;
 	private String director;
-	private int lenght;
-	private float cost;
-
-
+	private int length;
+	private double cost;
+	
+	private static int nbDigitalVideoDiscs = 0;
+	private int id;
+	
 	public String getTitle() {
 		return title;
 	}
-
-
 	public String getCategory() {
 		return category;
 	}
-
-
 	public String getDirector() {
 		return director;
 	}
-
-
-	public int getLenght() {
-		return lenght;
+	public int getLength() {
+		return length;
 	}
-
-
-	public float getCost() {
+	public double getCost() {
 		return cost;
 	}
 	
 	public DigitalVideoDisc(String title) {
-			this.title = title;
-		}
-
-	public DigitalVideoDisc(String title, String category, String director, int lenght, float cost) {
+		this.title = title;
+	}
+	
+	public DigitalVideoDisc(String title, String category, double cost) {
+		this.category = category;
+		this.title = title;
+		this.cost = cost;
+	}
+	
+	public DigitalVideoDisc(String title, String category, String director, double cost) {
+		this.director = director;
+		this.category = category;
+		this.title = title;
+		this.cost = cost;
+	}
+	
+	public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
 		this.title = title;
 		this.category = category;
 		this.director = director;
-		this.lenght = lenght;
+		this.length = length;
 		this.cost = cost;
-	}
 		
-
-	public DigitalVideoDisc(String title, String category, String director, float cost) {
-		super();
+		nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+	}
+	public static int getNbDigitalVideoDiscs() {
+        return nbDigitalVideoDiscs;
+    }
+	public void displayDVDInformation() {
+		System.out.println("Title: " + this.title);
+		System.out.println("Category: " + this.category);
+		System.out.println("Director: " + this.director);
+		System.out.println("Length: " + this.length);
+		System.out.println("Cost: " + this.cost);
+		System.out.println();
+	}
+	public void setTitle(String title) {
+		// TODO Auto-generated method stub
 		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.cost = cost;
 	}
- 
-	public DigitalVideoDisc(String title, String category, float cost) {
-		super();
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-	}
- 
+	
+	public int getId() {
+        return id;
+    }
 
-		
-		public void displayDVDInformation() {
-			System.out.println("Title: " + this.title);
-			System.out.println("Category: " + this.category);
-			System.out.println("Director: " + this.director);
-			System.out.println("Length: " + this.lenght);
-			System.out.println("Cost: " + this.cost);
-			System.out.println();
-	}
- 
-		}
+    // toString method for a readable representation of a DigitalVideoDisc object
+    @Override
+    public String toString() {
+        return "DVD - " + title + " - " + category + " - " + director + " - " + length + ": " + String.format("%.2f", cost) + " $";
+    }
+
+    // Method to check if the DVD title matches a given string
+    public boolean isMatch(String title) {
+        return this.title.toLowerCase().contains(title.toLowerCase());
+    }
+}
