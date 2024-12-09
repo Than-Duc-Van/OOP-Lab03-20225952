@@ -1,4 +1,4 @@
-package main;
+package main.disc;
  
 public class DigitalVideoDisc {
 	private String title;

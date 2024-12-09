@@ -1,8 +1,8 @@
-package main;
+package main.store;
 
 import java.util.ArrayList;
 
-import main.DigitalVideoDisc;
+import main.disc.DigitalVideoDisc;
 
 public class Store {
     // Attribute: ArrayList to store DVDs available in the store

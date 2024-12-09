@@ -1,4 +1,6 @@
-package main;
+package main.test.disc;
+
+import main.disc.DigitalVideoDisc;
 
 public class TestPassingParameter {
 	public static void main(String[] args) {

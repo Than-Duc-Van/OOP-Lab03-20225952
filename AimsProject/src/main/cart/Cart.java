@@ -1,6 +1,6 @@
-package main;
+package main.cart;
 
-import main.DigitalVideoDisc;
+import main.disc.DigitalVideoDisc;
  
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
