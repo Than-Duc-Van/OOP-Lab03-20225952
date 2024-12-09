@@ -1,7 +1,7 @@
-package main.test.cart;
+package main;
 
-import main.cart.Cart;
-import main.disc.DigitalVideoDisc;
+import main.Cart;
+import main.DigitalVideoDisc;
 
 public class CartTest {
 	public static void main(String[] args)
