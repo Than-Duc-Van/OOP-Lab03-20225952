@@ -1,7 +1,4 @@
-package main.aims;
-
-import main.cart.Cart;
-import main.disc.DigitalVideoDisc;
+package main;
 
 public class Aims {
 	public static void main(String[] args) {
