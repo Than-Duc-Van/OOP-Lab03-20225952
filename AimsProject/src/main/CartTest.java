@@ -15,5 +15,13 @@ public class CartTest {
 		cart.addDigitalVideoDisc(dvd3);
 		
 		cart.printCartDetails();
+		System.out.println("\nSearch by ID:");
+        cart.searchById(2);  // Should find "Interstellar"
+        cart.searchById(5);  // Should notify no match
+
+        // Test searching by title
+        System.out.println("\nSearch by Title:");
+        cart.searchByTitle("Aladin");  // Should find "The Matrix" and "Matrix Reloaded"
+        cart.searchByTitle("Star");  // Should notify no match
 	}
 }
