@@ -1,7 +1,7 @@
-package main;
+package main.test.store;
 
-import main.DigitalVideoDisc;
-import main.Store;
+import main.disc.DigitalVideoDisc;
+import main.store.Store;
 
 public class StoreTest {
     public static void main(String[] args) {
